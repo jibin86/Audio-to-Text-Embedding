@@ -36,7 +36,7 @@ This code is built upon [The Power of Sound(TPoS)](https://github.com/ku-vai/TPo
 - Audio Detection
 
     ```
-    cd audio_detection/audio_infer/useful_ckpts
+    cd pretrained_models
     wget https://huggingface.co/Dongchao/pre_trained_model/resolve/main/audio_detection.pth
     ```
 
