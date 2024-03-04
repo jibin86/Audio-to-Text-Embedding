@@ -142,7 +142,7 @@ if __name__ == "__main__":
 
             global_step += 1
 
-            if global_step % 200 == 0:
+            if global_step % 300 == 0:
 
                 audioencoder.eval()
                 map_model.eval()        
@@ -172,12 +172,12 @@ if __name__ == "__main__":
                 print("Epoch : {:2d} , train loss : {:.5f}, validation loss : {:.5f}, Time : {}".format(epoch, train_loss_value / global_step, validation_loss_value / len(validation_dataloader), time.time() - start))
 
 
-                with open("../pretrained_models/tpos_loss.txt", "a") as f:
+                with open("../pretrained_models/audio_emb_loss.txt", "a") as f:
                             f.write("\n\nEpoch : {:2d} , train loss : {:.5f}, validation loss : {:.5f}, Time : {}".format(epoch, train_loss_value / global_step, validation_loss_value / len(validation_dataloader), time.time() - start))
                 
                 if min_validation_loss_value > validation_loss_value:
                     print(f"update min_validation_loss_value: {validation_loss_value} <= {min_validation_loss_value}")
-                    save_path = "../pretrained_models/map_model_" + str(epoch) +"_tpos_loss" + ".pth"
+                    save_path = "../pretrained_models/map_model_" + str(epoch) +"_audio_emb_loss" + ".pth"
                     torch.save(map_model.state_dict(), save_path)
                     min_validation_loss_value = validation_loss_value
             

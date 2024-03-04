@@ -132,7 +132,7 @@ class Audio_Emb_Loss(nn.Module):
         # print(model_dict.keys())
 
         pretrained_model = TPoS_Audio_Encoder(batch_size=batch_size)
-        pretrained_model.load_state_dict(copyStateDict(torch.load("../pretrained_models/tpos_audio_encoder_23.pth")))
+        pretrained_model.load_state_dict(copyStateDict(torch.load("../pretrained_models/audio_encoder_23.pth")))
 
         pretrained_dict = pretrained_model.state_dict()
         # print(pretrained_dict.keys())
