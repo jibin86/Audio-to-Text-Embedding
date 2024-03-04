@@ -1,6 +1,9 @@
 # Audio-to-Text-Embedding
 This is an implementation of a deep learning model for embedding 2-second audio signals into text representations. This repository contains code for training models that convert audio data into text embeddings.
 
+This code can be useful for text-to-video generation models, as it converts audio into text embeddings by segmenting them into 2-second intervals.
+
+
 ## Installation
 
 Clone the repository:
