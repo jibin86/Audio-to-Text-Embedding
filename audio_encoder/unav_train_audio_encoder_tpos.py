@@ -6,8 +6,8 @@ import torch
 import random
 import argparse
 import torch.optim as optim
-from audio_encoder.unav_datasets import UnavCurationDataset, UnavCurationTestDataset
-from audio_encoder.unav_model import Mapping_Model, Audio_Emb_Loss, FrozenOpenCLIPEmbedder, copyStateDict
+from unav_datasets import UnavCurationDataset, UnavCurationTestDataset
+from unav_model import Mapping_Model, Audio_Emb_Loss, FrozenOpenCLIPEmbedder, copyStateDict
 import torch.nn.functional as F
 import torch.nn as nn
 import time
@@ -103,15 +103,15 @@ if __name__ == "__main__":
     # scheduler = optim.lr_scheduler.CyclicLR(optimizer, base_lr=0.001, max_lr=0.1, step_size_up=5, mode="triangular")
     
     min_validation_loss_value = 50000
-    global_step = 0
     for epoch in range(args.epochs):
-        start = time.time()
+        global_step = 0
         train_loss_value, validation_loss_value = 0, 0
         # audioencoder.train()
         result_loss = 0
 
         pbar = tqdm(train_dataloader)
         for idx, (batch_audio, batch_audio_aug, batch_text) in enumerate(pbar):
+            start = time.time()
             map_model.train()
             # print(batch_audio.size()) # torch.Size([batch, 1, 128, 153])
             audio_embedding = audioencoder(batch_audio.cuda())
@@ -149,6 +149,7 @@ if __name__ == "__main__":
                 
                 print("Validation !")
                 pbar2 = tqdm(validation_dataloader)
+                validation_loss_value = 0
                 for idx, (batch_audio, batch_audio_aug, batch_text) in enumerate(pbar2):
                     
                     with torch.no_grad():

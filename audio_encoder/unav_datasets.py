@@ -30,7 +30,7 @@ class UnavCurationDataset(Dataset):
 
         self.audio_lists = glob("./unav_curation/train/*.npy") # Put postprocessed audio files here
         self.audio_dir = "./unav_curation/train"
-        self.json_file = "./text_prompt/audio_results_train.json"
+        self.json_file = "../text_prompt/audio_results_train.json"
         self.audio_lists = []
         with open(self.json_file, 'r') as file:
             data = json.load(file)
@@ -102,7 +102,7 @@ class UnavCurationTestDataset(Dataset):
 
         self.audio_lists = glob("./unav_curation/test/*.npy") # Put postprocessed audio files here
         self.audio_dir = "./unav_curation/test"
-        self.json_file = "./text_prompt/audio_results_test.json"
+        self.json_file = "../text_prompt/audio_results_test.json"
         self.audio_lists = []
         with open(self.json_file, 'r') as file:
             data = json.load(file)
