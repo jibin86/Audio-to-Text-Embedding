@@ -92,7 +92,7 @@ class FrozenOpenCLIPEmbedder(nn.Module):
 class Audio_Encoder(nn.Module):
     '''Audio_Emb_Loss 클래스에서 호출함'''
     
-    def __init__(self, sequence_length=5, input_size=768, hidden_size=768, backbone_name="resnet18",batch_size=320):
+    def __init__(self, sequence_length=5, input_size=768, hidden_size=768, backbone_name="resnet18"):
 
         super(Audio_Encoder,self).__init__()
 
@@ -105,8 +105,6 @@ class Audio_Encoder(nn.Module):
         self.conv = torch.nn.Conv2d(1, 3, (3, 3))
         self.feature_extractor = timm.create_model(self.backbone_name, num_classes=self.input_size, pretrained=True)
     
-        self.batch_size=batch_size
-    
 
     def forward (self,x):
 
@@ -117,22 +115,24 @@ class Audio_Encoder(nn.Module):
         x=a  # x => (batch, 5, 768)'''
 
         ''' 수정된 방법: x => (batch, 128, 153) => reshape => (batch, 1, 128, 153) => feature_extractor output => (batch, 768) '''
-        x = self.feature_extractor(self.conv(x.reshape(self.batch_size,1,128,self.hidden_size//self.sequence_length)))
+        x = self.feature_extractor(self.conv(x.reshape(x.shape[0],1,128,self.hidden_size//self.sequence_length)))
 
         return x    # x.shape => (batch, 768)
     
 class Audio_Emb_Loss(nn.Module):
     
-    def __init__(self, batch_size=320):
+    def __init__(self, model_path="../pretrained_models/audio_encoder_23.pth"):
 
         super(Audio_Emb_Loss,self).__init__()
 
-        self.model = Audio_Encoder(batch_size=batch_size)
+        self.model = Audio_Encoder()
+        self.model_path = model_path
         model_dict = self.model.state_dict()
+
         # print(model_dict.keys())
 
-        pretrained_model = TPoS_Audio_Encoder(batch_size=batch_size)
-        pretrained_model.load_state_dict(copyStateDict(torch.load("../pretrained_models/audio_encoder_23.pth")))
+        pretrained_model = TPoS_Audio_Encoder()
+        pretrained_model.load_state_dict(copyStateDict(torch.load(self.model_path)))
 
         pretrained_dict = pretrained_model.state_dict()
         # print(pretrained_dict.keys())
@@ -182,7 +182,7 @@ class Mapping_Model(nn.Module):
 class TPoS_Audio_Encoder(nn.Module):
     '''모델 가중치 일부분만 가져오는 용도'''
     
-    def __init__(self, sequence_length=5, lstm_hidden_dim=768, input_size=768, hidden_size=768, num_layers=1,backbone_name="resnet18",batch_size=320, ngpus = 4):
+    def __init__(self, sequence_length=5, lstm_hidden_dim=768, input_size=768, hidden_size=768, num_layers=1,backbone_name="resnet18", ngpus = 4):
 
         super(TPoS_Audio_Encoder,self).__init__()
 
@@ -207,16 +207,14 @@ class TPoS_Audio_Encoder(nn.Module):
     
         self.lstm = nn.LSTM(input_size=self.input_size, hidden_size=self.hidden_size,num_layers=num_layers, batch_first=True)
         self.ngpus=ngpus
-        self.batch_size=batch_size
-        self.size=int(self.batch_size / self.ngpus)
     
         self.cnn = nn.Conv1d(768,1, kernel_size=1)
 
     def forward (self,x):
 
-        a=torch.zeros(self.size,self.sequence_length,768).cuda()
+        a=torch.zeros(x.shape[0],self.sequence_length,768).cuda()
         for i in range(self.sequence_length):
-            a[:,i,:] = self.feature_extractor(self.conv(x[:,i,:,:].reshape(self.size,1,128,self.hidden_size//self.sequence_length)))
+            a[:,i,:] = self.feature_extractor(self.conv(x[:,i,:,:].reshape(x.shape[0],1,128,self.hidden_size//self.sequence_length)))
         x=a
         h_0 = Variable(torch.zeros( self.num_layers,x.size(0), self.hidden_size)).cuda()
         c_0 = Variable(torch.zeros( self.num_layers,x.size(0),  self.hidden_size)).cuda()
@@ -230,13 +228,13 @@ class TPoS_Audio_Encoder(nn.Module):
 
         beta_t=self.softmax(beta_t)
 
-        out=output[:,0,:].mul(beta_t[:,0].reshape(self.size,-1))
+        out=output[:,0,:].mul(beta_t[:,0].reshape(x.shape[0],-1))
 
         out=out.unsqueeze(1)
 
 
         for i in range(1,self.sequence_length):
-            next_z=output[:,i,:].mul(beta_t[:,i].reshape(self.size,-1) )
+            next_z=output[:,i,:].mul(beta_t[:,i].reshape(x.shape[0],-1) )
             out=torch.cat([out,next_z.unsqueeze(1)],dim=1)
 
         return output[:,-1,:], out, beta_t
@@ -259,14 +257,15 @@ class AudioEncoder(torch.nn.Module):
 class SoundCLIPLoss(torch.nn.Module):
     '''아직 사용 안 함'''
 
-    def __init__(self):
+    def __init__(self, model_path="../pretrained_models/resnet18_57.pth"):
         super(SoundCLIPLoss, self).__init__()
         # self.model, self.preprocess = clip.load("ViT-B/32", device="cuda")
         # self.upsample = torch.nn.Upsample(scale_factor=7)
         # self.avg_pool = torch.nn.AvgPool2d(kernel_size=512 // 32)
+        self.model_path = model_path
 
         self.audio_encoder = AudioEncoder()
-        self.audio_encoder.load_state_dict(copyStateDict(torch.load("../pretrained_models/resnet18_57.pth")))
+        self.audio_encoder.load_state_dict(copyStateDict(torch.load(self.model_path)))
 
         self.audio_encoder = self.audio_encoder.cuda()
         self.audio_encoder.eval()
