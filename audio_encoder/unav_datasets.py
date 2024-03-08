@@ -28,7 +28,7 @@ class UnavCurationDataset(Dataset):
         self.width_resolution = 768 // self.num_frames # 시간축으로 mel-spectrogram을 768 // self.num_frames (=153)개로 쪼갬
         self.frame_per_audio = self.time_length // self.num_frames
 
-        self.audio_lists = glob("./unav_curation/train/*.npy") # Put postprocessed audio files here
+        # self.audio_lists = glob("./unav_curation/train/*.npy") # Put postprocessed audio files here
         self.audio_dir = "./unav_curation/train"
         self.json_file = "../text_prompt/audio_results_train.json"
         self.audio_lists = []
@@ -100,7 +100,7 @@ class UnavCurationTestDataset(Dataset):
         self.width_resolution = 768 // self.num_frames # mel-spectrogram의 시간축
         self.frame_per_audio = self.time_length // self.num_frames
 
-        self.audio_lists = glob("./unav_curation/test/*.npy") # Put postprocessed audio files here
+        # self.audio_lists = glob("./unav_curation/test/*.npy") # Put postprocessed audio files here
         self.audio_dir = "./unav_curation/test"
         self.json_file = "../text_prompt/audio_results_test.json"
         self.audio_lists = []

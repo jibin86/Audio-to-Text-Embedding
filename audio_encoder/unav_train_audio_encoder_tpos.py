@@ -69,7 +69,7 @@ if __name__ == "__main__":
         num_workers=args.num_workers,
         pin_memory=True)
 
-    audioencoder = Audio_Emb_Loss(batch_size=batch_size)
+    audioencoder = Audio_Emb_Loss()
     # audioencoder=nn.DataParallel(audioencoder).to(device)
     audioencoder = audioencoder.to(device)
     map_model = Mapping_Model()
