@@ -5,7 +5,7 @@ sample_rate = 32000
 clip_samples = sample_rate * 10     # Audio clips are 10-second
 
 # Load label
-with open('./audio_detection/metadata/class_labels_indices.csv', 'r') as f:
+with open('./metadata/class_labels_indices.csv', 'r') as f:
     reader = csv.reader(f, delimiter=',')
     lines = list(reader)
 

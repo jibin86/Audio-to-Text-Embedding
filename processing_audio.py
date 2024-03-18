@@ -9,7 +9,7 @@ import os
 import glob
 from tqdm import tqdm
 from pydub import AudioSegment
-from audio_encoder.unav_model import Mapping_Model, Audio_Emb_Loss, FrozenOpenCLIPEmbedder, copyStateDict
+from audio_encoder.unav_model import Mapping_Model, Audio_Emb_Loss
 
 # 오디오를 2초 단위로 자르고 저장하는 함수
 def split_audio(audio_file, segment_length=2000, output_dir="outputs"):
@@ -38,7 +38,7 @@ def curate(segment):
 
     return audio_input
 
-def encode_audio(audio_npy):
+def encode_audio(audio_npy, mlp_path='pretrained_models/map_model_0_audio_emb_loss.pth'):
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -47,7 +47,7 @@ def encode_audio(audio_npy):
     audioencoder.eval()
 
     map_model = Mapping_Model()
-    map_model.load_state_dict(torch.load('pretrained_models/map_model_0_audio_emb_loss.pth'))
+    map_model.load_state_dict(torch.load(mlp_path))
     map_model = map_model.to(device)
     map_model.eval()
 

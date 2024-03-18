@@ -29,8 +29,8 @@ class UnavCurationDataset(Dataset):
         self.frame_per_audio = self.time_length // self.num_frames
 
         # self.audio_lists = glob("./unav_curation/train/*.npy") # Put postprocessed audio files here
-        self.audio_dir = "./unav_curation/train"
-        self.json_file = "../text_prompt/audio_results_train.json"
+        self.audio_dir = "./unav_curation2/train"
+        self.json_file = "../text_prompt/unav_train.json"
         self.audio_lists = []
         with open(self.json_file, 'r') as file:
             data = json.load(file)
@@ -42,6 +42,7 @@ class UnavCurationDataset(Dataset):
                 audio_path = os.path.join(self.audio_dir, audio_file[:-4]+".npy")
                 self.audio_lists.append([audio_path, audio_data])
         print(f"{cnt_none} audios have no prompt.")
+        self.audio_lists = self.audio_lists[:20]
 
     def __getitem__(self, idx):
         audio_info = self.audio_lists[idx]
@@ -52,22 +53,22 @@ class UnavCurationDataset(Dataset):
         # print(text_prompt)
         
         audio_seg = audio_inputs[:,:,:self.width_resolution]
-        # print(audio_seg.shape) # (1, 128, 153)
-        audio_seg = audio_seg[0,:self.n_mels,:self.width_resolution] # n.mels => 128
-        # print(audio_seg.shape) # (128, 153)
+        # # print(audio_seg.shape) # (1, 128, 153)
+        # audio_seg = audio_seg[0,:self.n_mels,:self.width_resolution] # n.mels => 128
+        # # print(audio_seg.shape) # (128, 153)
 
-        audio_aug = self.spec_augment(audio_seg)
-        # print(audio_aug.shape) # (128, 153)
+        # audio_aug = self.spec_augment(audio_seg)
+        # # print(audio_aug.shape) # (128, 153)
 
-        audio_seg = audio_seg.reshape(-1, self.n_mels, self.width_resolution)
-        audio_aug = audio_aug.reshape(-1, self.n_mels, self.width_resolution)
+        # audio_seg = audio_seg.reshape(-1, self.n_mels, self.width_resolution)
+        # audio_aug = audio_aug.reshape(-1, self.n_mels, self.width_resolution)
             
         audio_seg = torch.from_numpy(audio_seg).float()
-        audio_aug = torch.from_numpy(audio_aug).float()
+        # audio_aug = torch.from_numpy(audio_aug).float()
 
         # print(audio_seg.shape)  # torch.Size([1, 128, 153])
 
-        return audio_seg, audio_aug, text_prompt
+        return audio_seg, text_prompt
 
     def spec_augment(self, spec, num_mask=2, freq_masking_max_percentage=0.15, time_masking_max_percentage=0.3):
         spec = spec.copy()
@@ -101,8 +102,8 @@ class UnavCurationTestDataset(Dataset):
         self.frame_per_audio = self.time_length // self.num_frames
 
         # self.audio_lists = glob("./unav_curation/test/*.npy") # Put postprocessed audio files here
-        self.audio_dir = "./unav_curation/test"
-        self.json_file = "../text_prompt/audio_results_test.json"
+        self.audio_dir = "./unav_curation2/test"
+        self.json_file = "../text_prompt/unav_test.json"
         self.audio_lists = []
         with open(self.json_file, 'r') as file:
             data = json.load(file)
@@ -114,6 +115,7 @@ class UnavCurationTestDataset(Dataset):
                 audio_path = os.path.join(self.audio_dir, audio_file[:-4]+".npy")
                 self.audio_lists.append([audio_path, audio_data])
         print(f"{cnt_none} audios have no prompt.")
+        self.audio_lists = self.audio_lists[:20]
 
 
     def __getitem__(self, idx):
@@ -124,16 +126,16 @@ class UnavCurationTestDataset(Dataset):
         text_prompt = audio_info[1]
 
         audio_seg = audio_inputs[:,:,:self.width_resolution]
-        audio_seg = audio_seg[0,:self.n_mels,:self.width_resolution] # n.mels => 128
-        audio_aug = self.spec_augment(audio_seg)
+        # audio_seg = audio_seg[0,:self.n_mels,:self.width_resolution] # n.mels => 128
+        # audio_aug = self.spec_augment(audio_seg)
         
-        audio_seg = audio_seg.reshape(-1, self.n_mels, self.width_resolution)
-        audio_aug = audio_aug.reshape(-1, self.n_mels, self.width_resolution)
+        # audio_seg = audio_seg.reshape(-1, self.n_mels, self.width_resolution)
+        # audio_aug = audio_aug.reshape(-1, self.n_mels, self.width_resolution)
 
         audio_seg = torch.from_numpy(audio_seg).float()
-        audio_aug = torch.from_numpy(audio_aug).float()
+        # audio_aug = torch.from_numpy(audio_aug).float()
         
-        return audio_seg, audio_aug, text_prompt
+        return audio_seg, text_prompt
     
 
     def spec_augment(self, spec, num_mask=2, freq_masking_max_percentage=0.15, time_masking_max_percentage=0.3):

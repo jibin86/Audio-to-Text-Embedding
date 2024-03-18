@@ -57,8 +57,14 @@ def parse_args():
     parser.add_argument(
         "--audio_path",
         type=str,
-        nargs="?",
-        help="the audio file path"
+        help="the audio file path",
+        required=True
+    )
+    parser.add_argument(
+        "--mlp_ckpt",
+        type=str,
+        help="mlp ckpt file path",
+        required=True
     )
     parser.add_argument(
         "--prompt",
@@ -259,6 +265,7 @@ def main(opt):
     # audio_embeddings = np.load(opt.audio_emb_path) # (5, 76, 1024)
     # embeddings_tensor = torch.from_numpy(audio_embeddings).float() # embedding -> tensor로 변환
     # embeddings_tensor = embeddings_tensor.to(device)    
+    ### 오디오 파일 경로 ###
     audio_file = opt.audio_path
     segment_list = processing_audio.split_audio(audio_file)
 
@@ -355,7 +362,7 @@ def main(opt):
                 for seg in tqdm(segment_list, desc="data"):
                 # for prompts in tqdm(embeddings_tensor, desc="data"):
                     audio_npy = processing_audio.curate(seg)
-                    audio_embedding = processing_audio.encode_audio(audio_npy)
+                    audio_embedding = processing_audio.encode_audio(audio_npy, opt.mlp_ckpt)
 
                     embedding_tensor = torch.from_numpy(audio_embedding).float() # embedding -> tensor로 변환
                     embedding_tensor = embedding_tensor.to(device)

@@ -13,6 +13,9 @@ import torch
 from models import *
 from pytorch_utils import move_data_to_device
 import config
+import matplotlib.pyplot as plt
+import uuid
+
 
 
 class SoundDetection():
@@ -25,7 +28,7 @@ class SoundDetection():
         self.fmin = 50
         self.fmax = 14000
         self.model_type = 'PVT'
-        self.checkpoint_path = 'pretrained_models/audio_detection.pth'
+        self.checkpoint_path = '../pretrained_models/audio_detection.pth'
         self.classes_num = config.classes_num
         self.labels = config.labels
         self.frames_per_second = self.sample_rate // self.hop_size
@@ -37,7 +40,62 @@ class SoundDetection():
         self.model.load_state_dict(checkpoint['model'])
         self.model.to(self.device)
 
-    def sound_event_detection(self, audio_path):
+
+    def save_images(self, waveform, top_result_mat, top_k, sorted_indexes, audio_path):
+        stft = librosa.core.stft(y=waveform[0].data.cpu().numpy(), n_fft=self.window_size, 
+            hop_length=self.hop_size, window='hann', center=True)
+        frames_num = stft.shape[-1]
+        fig, axs = plt.subplots(3, 1, sharex=True, figsize=(10, 6))
+        im1 = axs[0].matshow(np.log(np.abs(stft)), origin='lower', aspect='auto', cmap='jet')
+        axs[0].set_ylabel('Frequency bins')
+        axs[0].set_title('Log spectrogram')
+
+        im2 = axs[1].matshow(top_result_mat.T, origin='upper', aspect='auto', cmap='jet', vmin=0, vmax=1)
+        axs[1].xaxis.set_ticks(np.arange(0, frames_num, self.frames_per_second)) # 0, 832, 100 => 100이 초 단위!
+        axs[1].xaxis.set_ticklabels(np.arange(0, frames_num / self.frames_per_second))
+        axs[1].yaxis.set_ticks(np.arange(0, top_k))
+        axs[1].yaxis.set_ticklabels(np.array(self.labels)[sorted_indexes[0 : top_k]])
+        axs[1].yaxis.grid(color='k', linestyle='solid', linewidth=0.3, alpha=0.3)
+        axs[1].set_xlabel('Seconds')
+        axs[1].xaxis.set_ticks_position('bottom')
+
+        draw_mat = top_result_mat.copy()
+        draw_mat[top_result_mat < 0.2] = 0
+        im3 = axs[2].matshow(draw_mat.T, origin='upper', aspect='auto', cmap='jet', vmin=0, vmax=1)
+        axs[2].xaxis.set_ticks(np.arange(0, frames_num, self.frames_per_second)) # 0, 832, 100 => 100이 초 단위!
+        axs[2].xaxis.set_ticklabels(np.arange(0, frames_num / self.frames_per_second))
+        axs[2].yaxis.set_ticks(np.arange(0, top_k))
+        axs[2].yaxis.set_ticklabels(np.array(self.labels)[sorted_indexes[0 : top_k]])
+        axs[2].yaxis.grid(color='k', linestyle='solid', linewidth=0.3, alpha=0.3)
+        axs[2].set_xlabel('Seconds')
+        axs[2].xaxis.set_ticks_position('bottom')
+
+        fig.colorbar(im1)
+        fig.colorbar(im2)
+        fig.colorbar(im3)
+        plt.tight_layout()
+        image_filename = os.path.join('results',f"{audio_path.split('/')[-1][:-4]}_"+str(uuid.uuid4())[0:4] + ".png")
+        plt.savefig(image_filename)
+        print(f"saving {image_filename}")
+
+        return None
+    
+    def find_segments(self, arr, threshold):
+        segments = []
+        start_idx = None
+        for i, value in enumerate(arr):
+            if value > threshold:
+                if start_idx is None:
+                    start_idx = i
+            else:
+                if start_idx is not None:
+                    segments.append((start_idx, i - 1))
+                    start_idx = None
+        if start_idx is not None:
+            segments.append((start_idx, len(arr) - 1))
+        return np.array(segments)/100
+
+    def sound_event_detection_top_k(self, audio_path):
         """Inference sound event detection result of an audio clip.
         """
         # print(self.device)
@@ -72,16 +130,74 @@ class SoundDetection():
         #     print(f"{top_result_label_sort[i]}: {top_result_mat_sort[i]:.3f}")
 
         return top_result_mat_sort, top_result_label_sort
+    
+    def detect_sound_with_threshold(self, audio_path):
+        """Inference sound event detection result of an audio clip.
+        """
+        # print(self.device)
+        
+        # Load audio
+        (waveform, _) = librosa.core.load(audio_path, sr=self.sample_rate, mono=True)
+        
+        ### cut audio (생략 가능)
+        start_time = 0
+        end_time = start_time + 15
+        start_sample = int(start_time * self.sample_rate)
+        end_sample = int(end_time * self.sample_rate)
+        print(waveform.shape)
+        waveform = waveform[start_sample:end_sample]
+    
+
+        waveform = waveform[None, :]    # (1, audio_length)
+        waveform = move_data_to_device(waveform, self.device)
+
+        # Forward
+        with torch.no_grad():
+            self.model.eval()
+            batch_output_dict = self.model(waveform, None)
+
+        framewise_output = batch_output_dict['framewise_output'].data.cpu().numpy()[0]
+        """(time_steps, classes_num)"""
+
+        threshold = 0.1
+        selected_indexes = np.where(np.max(framewise_output, axis=0) > threshold)[0]
+        top_k = len(selected_indexes)
+
+        # threshold를 넘는 값만 선택하여 결과 행렬 생성
+        top_result_mat = framewise_output[:, selected_indexes]
+
+        top_result_mat_sort = np.max(top_result_mat, axis=0)
+        top_result_label_sort = np.array(self.labels)[selected_indexes]
+
+        segments_dic = {}
+
+        ### Result Images
+        self.save_images(waveform, top_result_mat, top_k, selected_indexes, audio_path)
+            
+        # for i in range(top_k):
+        #     print(f"{top_result_label_sort[i]}: {top_result_mat_sort[i]:.3f}")
+
+        return top_result_mat_sort, top_result_label_sort, segments_dic
 
 
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--audio_path', type=str, required=True)
+    parser.add_argument('--a', type=str, required=True)
     args = parser.parse_args()
 
     sound = SoundDetection()
-    top_result_mat_sort, top_result_label_sort = sound.sound_event_detection(args.audio_path)
 
+    # print("### Start Sound Event Detection Top K ###")
+    # top_result_mat_sort, top_result_label_sort = sound.sound_event_detection_top_k(args.a)
+    # for i in range(len(top_result_mat_sort)):
+    #     print(f"{top_result_label_sort[i]}: {top_result_mat_sort[i]:.3f}")
+
+
+    print("\n### Start Sound Event Detection with Segments ###")
+    top_result_mat_sort, top_result_label_sort, segments_dic = sound.detect_sound_with_threshold(args.a)
     for i in range(len(top_result_mat_sort)):
-        print(f"{top_result_label_sort[i]}: {top_result_mat_sort[i]:.3f}")
+        if i in segments_dic:
+            print(f"{top_result_label_sort[i]}: {top_result_mat_sort[i]:.3f}, Segments: {segments_dic[i].tolist()}")
+        else:
+            print(f"{top_result_label_sort[i]}: {top_result_mat_sort[i]:.3f}")

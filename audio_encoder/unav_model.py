@@ -21,24 +21,29 @@ def copyStateDict(state_dict):
         new_state_dict[name] = v
     return new_state_dict
 
+class AbstractEncoder(nn.Module):
+    def __init__(self):
+        super().__init__()
 
-class FrozenOpenCLIPEmbedder(nn.Module):
+    def encode(self, *args, **kwargs):
+        raise NotImplementedError
+
+
+class FrozenOpenCLIPEmbedder(AbstractEncoder):
     """
-    Codes from VideoComposer
     Uses the OpenCLIP transformer encoder for text
     """
     LAYERS = [
-        #"pooled",
+        # "pooled",
         "last",
         "penultimate"
     ]
-    def __init__(self, arch="ViT-H-14", pretrained="laion2b_s32b_b79k", device="cuda", max_length=77,
+
+    def __init__(self, arch="ViT-H-14", version="laion2b_s32b_b79k", device="cuda", max_length=77,
                  freeze=True, layer="last"):
         super().__init__()
         assert layer in self.LAYERS
-        
-        model, _, _ = open_clip.create_model_and_transforms(arch, device=device, pretrained=pretrained)
-        
+        model, _, _ = open_clip.create_model_and_transforms(arch, device=device, pretrained=version)
         del model.visual
         self.model = model
 
@@ -60,10 +65,8 @@ class FrozenOpenCLIPEmbedder(nn.Module):
             param.requires_grad = False
 
     def forward(self, text):
-        tokens = open_clip.tokenize(text) 
-        # tokens.shape: torch.Size([1, 77])
-        z = self.encode_with_transformer(tokens.to(self.device)) 
-        # z.shape: torch.Size([1, 77, 1024])
+        tokens = open_clip.tokenize(text)
+        z = self.encode_with_transformer(tokens.to(self.device))
         return z
 
     def encode_with_transformer(self, text):
@@ -75,7 +78,7 @@ class FrozenOpenCLIPEmbedder(nn.Module):
         x = self.model.ln_final(x)
         return x
 
-    def text_transformer_forward(self, x: torch.Tensor, attn_mask = None):
+    def text_transformer_forward(self, x: torch.Tensor, attn_mask=None):
         for i, r in enumerate(self.model.transformer.resblocks):
             if i == len(self.model.transformer.resblocks) - self.layer_idx:
                 break
@@ -154,6 +157,7 @@ class Audio_Emb_Loss(nn.Module):
     
     def forward (self,x):
         x = self.model(x).float()
+        x = x/x.norm(dim=-1,keepdim=True)
         return x # (batch, 768)
     
     
@@ -163,19 +167,54 @@ class Mapping_Model(nn.Module):
         self.max_length = max_length-1
         self.input_c = 768
         self.output_c = 1024
-        self.linear1 = torch.nn.Linear(self.input_c,self.max_length//7*self.output_c)
-        self.linear2 = torch.nn.Linear(self.max_length//7*self.output_c,self.max_length*self.output_c)
+
+        # 768, 76//7x1024
+        # self.linear1 = torch.nn.Linear(self.input_c,self.max_length//7*self.output_c) 
+        self.linear1 = torch.nn.Linear(self.input_c,1024) 
+        
+        # 76//7x1024, 76x1024
+        self.linear2 = torch.nn.Linear(1024,self.max_length*self.output_c)
+        # self.linear3 = torch.nn.Linear(self.max_length//7*self.output_c,self.max_length//7*self.output_c)
+        # self.linear4 = torch.nn.Linear(self.max_length//7*self.output_c,self.max_length*self.output_c)
         self.act = torch.nn.GELU()
         self.drop = torch.nn.Dropout(0.2)
         
     def forward(self, x):
+        # x = self.linear1(x)
+        # x = self.drop(x)
+        # x = self.act(x)
+
+        # x = self.linear2(x)
+        # x = self.drop(x)
+        # x = self.act(x)
+
+        # x = x.reshape(-1,self.max_length,1024) # x.shape => torch.Size([batch, 76, 1024])
+
+
+
+        # 첫 번째 레이어의 출력
         x = self.linear1(x)
-        x = self.drop(x)
         x = self.act(x)
+        x = self.drop(x)
+
+        # 두 번째 레이어의 출력
         x = self.linear2(x)
-        x = self.drop(x)
         x = self.act(x)
-        x = x.reshape(x.shape[0],self.max_length,1024) # x.shape => torch.Size([batch, 76, 1024])
+        x = self.drop(x)
+
+        # # 3 번째 레이어의 출력
+        # x = self.linear3(x)
+        # x = self.act(x)
+        # x = self.drop(x)
+
+        # # 4 번째 레이어의 출력
+        # x = self.linear4(x)
+        # x = self.act(x)
+        # x = self.drop(x)
+
+        # 최종 출력 형태 조정
+        x = x.reshape(-1, self.max_length, 1024)
+
         return x
 
 
@@ -271,20 +310,35 @@ class SoundCLIPLoss(torch.nn.Module):
         self.audio_encoder.eval()
 
     def forward(self, audio):
+        # print(audio.shape)
         audio_features = self.audio_encoder(audio).float()
+        # print(audio_features.shape)
         return audio_features
 
 # if __name__ == "__main__":
 
-#     model = Audio_Emb_Loss()
+    # # model = Audio_Emb_Loss()
 
-#     # 모델의 각 레이어의 weight를 출력하여 확인
-#     for name, param in model.named_parameters():
-#         print(name, param)  
+    # # # 모델의 각 레이어의 weight를 출력하여 확인
+    # # for name, param in model.named_parameters():
+    # #     print(name, param)  
 
 
-#     model = model.cuda()
-#     model.eval()
+    # # model = model.cuda()
+    # # model.eval()
+
+
+    # map_model = Mapping_Model()
+    # # 모델의 각 레이어의 weight를 출력하여 확인
+    # map_model.load_state_dict(torch.load("../pretrained_models/unav_map_model2_0_audio_emb_loss.pth"))
+    # for name, param in map_model.named_parameters():
+    #     print(name, param)  
+
+    # map_model2 = Mapping_Model()
+    # # 모델의 각 레이어의 weight를 출력하여 확인
+    # map_model2.load_state_dict(torch.load("../pretrained_models/unav_map_model2_40_audio_emb_loss.pth"))
+    # for name, param in map_model2.named_parameters():
+    #     print(name, param)  
 
     
     

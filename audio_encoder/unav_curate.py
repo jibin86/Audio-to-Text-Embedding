@@ -18,7 +18,7 @@ def func(idx):
         wav_name = audio_lists[idx]        
         
         name = wav_name.split("/")[-1].split(".")[0]
-        path = f"unav_curation/{train_or_test}/{name}"
+        path = f"unav_curation2/{train_or_test}/{name}"
 
         if not os.path.exists(path):
             y, sr = librosa.load(wav_name, sr=44100)
@@ -39,7 +39,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
     print(args)
     train_or_test = args.train_or_test
-    audio_lists = glob(f"../unav_dataset/data/unav100/audio_segments_2sec/{train_or_test}/*.wav")
+    # audio_lists = glob(f"../unav_dataset/data/unav100/audio_segments_2sec/{train_or_test}/*.wav")
+    audio_lists = glob(f"../unav_dataset/data/unav100/audio_segments/{train_or_test}/*.wav")
     data_length = len(audio_lists)
     print(data_length)
     

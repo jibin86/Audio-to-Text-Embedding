@@ -19,7 +19,7 @@ Create and activate the conda environment:
 conda env create --file env.yaml
 conda activate audio_emb
 ```
-
+<!-- 
 Install required packages:
 
 ```
@@ -27,7 +27,7 @@ pip install ftfy regex tqdm gdown
 pip install git+https://github.com/openai/CLIP.git
 pip install transformers
 pip install open_clip_torch
-```
+``` -->
 
 ## Pretrained models
 This code is built upon [The Power of Sound(TPoS)](https://github.com/ku-vai/TPoS) and [AudioGPT](https://github.com/AIGC-Audio/AudioGPT/tree/main). Obtain the checkpoints for the audio extractor and audio detector.

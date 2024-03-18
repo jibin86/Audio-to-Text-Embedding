@@ -1,0 +1,93 @@
+
+
+Epoch :  0 , train loss : 0.55669, validation loss : 0.47580, Time : 2355.977657556534
+
+Epoch :  1 , train loss : 0.55233, validation loss : 0.47503, Time : 2378.546096086502
+
+Epoch :  2 , train loss : 0.55188, validation loss : 0.47525, Time : 2811.2289323806763
+
+Epoch :  0 , train loss : 0.54290, validation loss : 0.46984, Time : 1381.973483800888
+
+Epoch :  0 , train loss : 0.54275, validation loss : 0.46987, Time : 1387.118050813675
+
+Epoch :  1 , train loss : 0.53073, validation loss : 0.46889, Time : 1392.4226472377777
+
+Epoch :  2 , train loss : 0.53009, validation loss : 0.46809, Time : 1393.2878456115723
+
+Epoch :  3 , train loss : 0.52977, validation loss : 0.46761, Time : 1394.2540967464447
+
+Epoch :  4 , train loss : 0.52952, validation loss : 0.46793, Time : 1391.7205324172974
+
+Epoch :  5 , train loss : 0.52934, validation loss : 0.46712, Time : 1386.5205986499786
+
+Epoch :  6 , train loss : 0.52918, validation loss : 0.46752, Time : 1398.12517786026
+
+Epoch :  7 , train loss : 0.52900, validation loss : 0.46718, Time : 1389.865449666977
+
+Epoch :  8 , train loss : 0.52889, validation loss : 0.46794, Time : 1384.1835572719574
+
+Epoch :  9 , train loss : 0.52877, validation loss : 0.46652, Time : 1368.004885673523
+
+Epoch : 10 , train loss : 0.52866, validation loss : 0.46681, Time : 1377.3714799880981
+
+Epoch : 11 , train loss : 0.52855, validation loss : 0.46627, Time : 1387.5575420856476
+
+Epoch : 12 , train loss : 0.52845, validation loss : 0.46613, Time : 1389.1178109645844
+
+Epoch : 13 , train loss : 0.52835, validation loss : 0.46637, Time : 1379.8162159919739
+
+Epoch : 14 , train loss : 0.52828, validation loss : 0.46687, Time : 1378.5713512897491
+
+Epoch : 15 , train loss : 0.52821, validation loss : 0.46631, Time : 1373.4330792427063
+
+Epoch : 16 , train loss : 0.52815, validation loss : 0.46623, Time : 1384.3535346984863
+
+Epoch : 17 , train loss : 0.52808, validation loss : 0.46637, Time : 1390.1434047222137
+
+Epoch : 18 , train loss : 0.52800, validation loss : 0.46656, Time : 1373.9443860054016
+
+Epoch : 19 , train loss : 0.52797, validation loss : 0.46641, Time : 1373.5212788581848
+
+Epoch : 20 , train loss : 0.52791, validation loss : 0.46639, Time : 1378.1233427524567
+
+Epoch : 21 , train loss : 0.52786, validation loss : 0.46577, Time : 1374.8006045818329
+
+Epoch : 22 , train loss : 0.52781, validation loss : 0.46626, Time : 1383.9469559192657
+
+Epoch : 23 , train loss : 0.52773, validation loss : 0.46614, Time : 1366.1328780651093
+
+Epoch : 24 , train loss : 0.52772, validation loss : 0.46604, Time : 1373.0684897899628
+
+Epoch : 25 , train loss : 0.52768, validation loss : 0.46607, Time : 1385.8789756298065
+
+Epoch : 26 , train loss : 0.52764, validation loss : 0.46565, Time : 1376.2388055324554
+
+Epoch : 27 , train loss : 0.52760, validation loss : 0.46603, Time : 1389.7084865570068
+
+Epoch : 28 , train loss : 0.52756, validation loss : 0.46570, Time : 1381.5340752601624
+
+Epoch : 29 , train loss : 0.52752, validation loss : 0.46558, Time : 1370.4693071842194
+
+Epoch : 30 , train loss : 0.52747, validation loss : 0.46590, Time : 1367.461848974228
+
+Epoch : 31 , train loss : 0.52745, validation loss : 0.46588, Time : 1371.7393827438354
+
+Epoch : 32 , train loss : 0.52742, validation loss : 0.46591, Time : 1386.6079382896423
+
+Epoch : 33 , train loss : 0.52738, validation loss : 0.46606, Time : 1380.9618995189667
+
+Epoch : 34 , train loss : 0.52737, validation loss : 0.46564, Time : 1376.309234380722
+
+Epoch : 35 , train loss : 0.52733, validation loss : 0.46580, Time : 1377.4370222091675
+
+Epoch : 36 , train loss : 0.52730, validation loss : 0.46560, Time : 1385.8556759357452
+
+Epoch : 37 , train loss : 0.52730, validation loss : 0.46566, Time : 1382.7380676269531
+
+Epoch : 38 , train loss : 0.52725, validation loss : 0.46582, Time : 1384.0716643333435
+
+Epoch : 39 , train loss : 0.52724, validation loss : 0.46581, Time : 1376.8426222801208
+
+Epoch : 40 , train loss : 0.52722, validation loss : 0.46552, Time : 1382.3032834529877
+
+Epoch : 41 , train loss : 0.52720, validation loss : 0.46584, Time : 1381.6846852302551

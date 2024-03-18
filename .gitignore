@@ -1,14 +1,17 @@
 
 __pycache__/
-
+.vscode/
 ./audio_encoder/unav_curation/test/*
 ./audio_encoder/unav_curation/train/*
 unav_dataset/data/unav100/audio_segments_2sec/test/*.wav
 unav_dataset/data/unav100/audio_segments_2sec/train/*.wav
+unav_dataset/data/unav100/audio_segments/test/*.wav
+unav_dataset/data/unav100/audio_segments/train/*.wav
 unav_dataset/data/unav100/raw_audios/*.wav
 *.pth
 *.ckpt
 *.npy
 .git
-
+xformers/
 outputs/
+wandb

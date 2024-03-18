@@ -1,0 +1,887 @@
+# 2초 audio => soundclip
+
+Epoch :  0 , train loss : 0.56992, validation loss : 0.49034, Time : 306.09907150268555
+
+Epoch :  0 , train loss : 0.56724, validation loss : 0.49068, Time : 306.03495693206787
+
+Epoch :  0 , train loss : 0.56604, validation loss : 0.48848, Time : 302.6903963088989
+
+Epoch :  0 , train loss : 0.56534, validation loss : 0.48813, Time : 302.74337553977966
+
+Epoch :  0 , train loss : 0.56481, validation loss : 0.48803, Time : 301.33649039268494
+
+Epoch :  0 , train loss : 0.56446, validation loss : 0.48681, Time : 302.5425808429718
+
+Epoch :  0 , train loss : 0.56421, validation loss : 0.49155, Time : 300.09178161621094
+
+Epoch :  0 , train loss : 0.56401, validation loss : 0.48995, Time : 300.6832036972046
+
+Epoch :  0 , train loss : 0.56382, validation loss : 0.48520, Time : 302.04179883003235
+
+Epoch :  1 , train loss : 0.56241, validation loss : 0.49219, Time : 300.17129731178284
+
+Epoch :  1 , train loss : 0.56236, validation loss : 0.48758, Time : 301.4463653564453
+
+Epoch :  1 , train loss : 0.56224, validation loss : 0.48905, Time : 299.00350642204285
+
+Epoch :  1 , train loss : 0.56216, validation loss : 0.48761, Time : 300.55180978775024
+
+Epoch :  1 , train loss : 0.56210, validation loss : 0.48789, Time : 301.846453666687
+
+Epoch :  1 , train loss : 0.56211, validation loss : 0.48728, Time : 299.92876386642456
+
+Epoch :  1 , train loss : 0.56206, validation loss : 0.49315, Time : 299.97851490974426
+
+Epoch :  1 , train loss : 0.56206, validation loss : 0.48679, Time : 297.67321968078613
+
+Epoch :  1 , train loss : 0.56202, validation loss : 0.48902, Time : 298.30425786972046
+
+Epoch :  2 , train loss : 0.56197, validation loss : 0.48770, Time : 299.4803340435028
+
+Epoch :  2 , train loss : 0.56192, validation loss : 0.49094, Time : 299.23064732551575
+
+Epoch :  2 , train loss : 0.56191, validation loss : 0.48984, Time : 299.1369950771332
+
+Epoch :  2 , train loss : 0.56187, validation loss : 0.48540, Time : 299.3044857978821
+
+Epoch :  2 , train loss : 0.56186, validation loss : 0.48899, Time : 298.36271691322327
+
+Epoch :  2 , train loss : 0.56184, validation loss : 0.48721, Time : 298.67577028274536
+
+Epoch :  2 , train loss : 0.56179, validation loss : 0.48718, Time : 298.451797246933
+
+Epoch :  2 , train loss : 0.56175, validation loss : 0.48899, Time : 298.88753962516785
+
+Epoch :  2 , train loss : 0.56171, validation loss : 0.48851, Time : 299.02044558525085
+
+Epoch :  3 , train loss : 0.56126, validation loss : 0.48925, Time : 299.25312423706055
+
+Epoch :  3 , train loss : 0.56154, validation loss : 0.48574, Time : 298.10881662368774
+
+Epoch :  3 , train loss : 0.56160, validation loss : 0.48786, Time : 298.3503842353821
+
+Epoch :  3 , train loss : 0.56154, validation loss : 0.48432, Time : 300.67839789390564
+
+Epoch :  3 , train loss : 0.56152, validation loss : 0.48545, Time : 298.02170419692993
+
+Epoch :  3 , train loss : 0.56151, validation loss : 0.48869, Time : 298.9095983505249
+
+Epoch :  3 , train loss : 0.56150, validation loss : 0.48982, Time : 298.45078802108765
+
+Epoch :  3 , train loss : 0.56148, validation loss : 0.48870, Time : 297.7703604698181
+
+Epoch :  3 , train loss : 0.56148, validation loss : 0.48628, Time : 300.20812344551086
+
+Epoch :  4 , train loss : 0.56127, validation loss : 0.48786, Time : 298.3882646560669
+
+Epoch :  4 , train loss : 0.56130, validation loss : 0.48813, Time : 295.6316177845001
+
+Epoch :  4 , train loss : 0.56124, validation loss : 0.48729, Time : 297.8489694595337
+
+Epoch :  4 , train loss : 0.56125, validation loss : 0.48524, Time : 297.6153326034546
+
+Epoch :  4 , train loss : 0.56129, validation loss : 0.48891, Time : 297.94595074653625
+
+Epoch :  4 , train loss : 0.56132, validation loss : 0.48715, Time : 296.3601965904236
+
+Epoch :  4 , train loss : 0.56134, validation loss : 0.48390, Time : 299.3602170944214
+
+Epoch :  4 , train loss : 0.56134, validation loss : 0.48788, Time : 297.62081384658813
+
+Epoch :  4 , train loss : 0.56135, validation loss : 0.49036, Time : 296.89875864982605
+
+Epoch :  5 , train loss : 0.56117, validation loss : 0.48564, Time : 298.36190485954285
+
+Epoch :  5 , train loss : 0.56119, validation loss : 0.48590, Time : 299.4291410446167
+
+Epoch :  5 , train loss : 0.56118, validation loss : 0.48754, Time : 296.3825352191925
+
+Epoch :  5 , train loss : 0.56124, validation loss : 0.48582, Time : 297.33264803886414
+
+Epoch :  5 , train loss : 0.56125, validation loss : 0.48407, Time : 297.9348602294922
+
+Epoch :  5 , train loss : 0.56123, validation loss : 0.48649, Time : 297.08468770980835
+
+Epoch :  5 , train loss : 0.56122, validation loss : 0.48930, Time : 298.0847008228302
+
+Epoch :  5 , train loss : 0.56123, validation loss : 0.48681, Time : 297.3470902442932
+
+Epoch :  5 , train loss : 0.56122, validation loss : 0.48604, Time : 297.62029910087585
+
+Epoch :  6 , train loss : 0.56110, validation loss : 0.48614, Time : 297.05332922935486
+
+Epoch :  6 , train loss : 0.56117, validation loss : 0.48562, Time : 296.57181453704834
+
+Epoch :  6 , train loss : 0.56113, validation loss : 0.48799, Time : 297.9855852127075
+
+Epoch :  6 , train loss : 0.56109, validation loss : 0.48746, Time : 297.3279037475586
+
+Epoch :  6 , train loss : 0.56110, validation loss : 0.48470, Time : 297.61400866508484
+
+Epoch :  6 , train loss : 0.56109, validation loss : 0.48769, Time : 300.7463803291321
+
+Epoch :  6 , train loss : 0.56110, validation loss : 0.48688, Time : 300.9692442417145
+
+Epoch :  6 , train loss : 0.56111, validation loss : 0.48677, Time : 298.41504526138306
+
+Epoch :  6 , train loss : 0.56115, validation loss : 0.48747, Time : 296.3012902736664
+
+Epoch :  7 , train loss : 0.56090, validation loss : 0.48756, Time : 296.75426602363586
+
+Epoch :  7 , train loss : 0.56090, validation loss : 0.48796, Time : 296.10992670059204
+
+Epoch :  7 , train loss : 0.56106, validation loss : 0.48579, Time : 295.4777731895447
+
+Epoch :  7 , train loss : 0.56101, validation loss : 0.48773, Time : 297.6371943950653
+
+Epoch :  7 , train loss : 0.56105, validation loss : 0.48796, Time : 298.41683411598206
+
+Epoch :  7 , train loss : 0.56111, validation loss : 0.48768, Time : 296.5961308479309
+
+Epoch :  7 , train loss : 0.56111, validation loss : 0.48662, Time : 295.7558157444
+
+Epoch :  7 , train loss : 0.56110, validation loss : 0.48533, Time : 295.42255997657776
+
+Epoch :  7 , train loss : 0.56109, validation loss : 0.48771, Time : 297.1102542877197
+
+Epoch :  8 , train loss : 0.56108, validation loss : 0.48671, Time : 296.22616600990295
+
+Epoch :  8 , train loss : 0.56107, validation loss : 0.48682, Time : 297.241580247879
+
+Epoch :  8 , train loss : 0.56110, validation loss : 0.48888, Time : 298.0629470348358
+
+Epoch :  8 , train loss : 0.56107, validation loss : 0.48582, Time : 299.72593331336975
+
+Epoch :  8 , train loss : 0.56107, validation loss : 0.48661, Time : 296.2292559146881
+
+Epoch :  8 , train loss : 0.56105, validation loss : 0.48665, Time : 297.6705467700958
+
+Epoch :  8 , train loss : 0.56105, validation loss : 0.48605, Time : 296.7534062862396
+
+Epoch :  8 , train loss : 0.56104, validation loss : 0.48809, Time : 301.42605996131897
+
+Epoch :  8 , train loss : 0.56100, validation loss : 0.48637, Time : 296.28708839416504
+
+Epoch :  9 , train loss : 0.56123, validation loss : 0.48798, Time : 296.79265666007996
+
+Epoch :  9 , train loss : 0.56115, validation loss : 0.48585, Time : 296.5441164970398
+
+Epoch :  9 , train loss : 0.56100, validation loss : 0.48370, Time : 300.54443883895874
+
+Epoch :  9 , train loss : 0.56098, validation loss : 0.48630, Time : 295.78612184524536
+
+Epoch :  9 , train loss : 0.56096, validation loss : 0.48580, Time : 295.0047700405121
+
+Epoch :  9 , train loss : 0.56094, validation loss : 0.48408, Time : 294.35751509666443
+
+Epoch :  9 , train loss : 0.56094, validation loss : 0.48730, Time : 296.1380727291107
+
+Epoch :  9 , train loss : 0.56092, validation loss : 0.48964, Time : 299.45798778533936
+
+Epoch :  9 , train loss : 0.56092, validation loss : 0.48779, Time : 297.1806831359863
+
+Epoch : 10 , train loss : 0.56077, validation loss : 0.48625, Time : 296.4443995952606
+
+Epoch : 10 , train loss : 0.56086, validation loss : 0.48682, Time : 298.0021023750305
+
+Epoch : 10 , train loss : 0.56084, validation loss : 0.48688, Time : 297.4670820236206
+
+Epoch : 10 , train loss : 0.56084, validation loss : 0.48606, Time : 301.67650413513184
+
+Epoch : 10 , train loss : 0.56092, validation loss : 0.48632, Time : 297.81945753097534
+
+Epoch : 10 , train loss : 0.56090, validation loss : 0.48652, Time : 296.17611742019653
+
+Epoch : 10 , train loss : 0.56088, validation loss : 0.48765, Time : 298.5887498855591
+
+Epoch : 10 , train loss : 0.56087, validation loss : 0.48885, Time : 296.1183114051819
+
+Epoch : 10 , train loss : 0.56087, validation loss : 0.48666, Time : 296.5248165130615
+
+Epoch : 11 , train loss : 0.56107, validation loss : 0.48626, Time : 296.9061939716339
+
+Epoch : 11 , train loss : 0.56094, validation loss : 0.48655, Time : 296.4370481967926
+
+Epoch : 11 , train loss : 0.56087, validation loss : 0.48517, Time : 296.69650411605835
+
+Epoch : 11 , train loss : 0.56081, validation loss : 0.48652, Time : 297.91946291923523
+
+Epoch : 11 , train loss : 0.56085, validation loss : 0.48741, Time : 296.27006220817566
+
+Epoch : 11 , train loss : 0.56083, validation loss : 0.48491, Time : 297.66857075691223
+
+Epoch : 11 , train loss : 0.56083, validation loss : 0.48665, Time : 297.57310819625854
+
+Epoch : 11 , train loss : 0.56083, validation loss : 0.48602, Time : 298.243531703949
+
+Epoch : 11 , train loss : 0.56084, validation loss : 0.48779, Time : 297.6972966194153
+
+Epoch : 12 , train loss : 0.56085, validation loss : 0.48646, Time : 297.6180226802826
+
+Epoch : 12 , train loss : 0.56083, validation loss : 0.48782, Time : 297.1769046783447
+
+Epoch : 12 , train loss : 0.56078, validation loss : 0.48655, Time : 298.3211658000946
+
+Epoch : 12 , train loss : 0.56075, validation loss : 0.48668, Time : 297.76874566078186
+
+Epoch : 12 , train loss : 0.56076, validation loss : 0.48732, Time : 297.5751929283142
+
+Epoch : 12 , train loss : 0.56075, validation loss : 0.48716, Time : 296.8871021270752
+
+Epoch : 12 , train loss : 0.56076, validation loss : 0.48739, Time : 299.04741525650024
+
+Epoch : 12 , train loss : 0.56078, validation loss : 0.48565, Time : 297.03658723831177
+
+Epoch : 12 , train loss : 0.56076, validation loss : 0.48693, Time : 297.46441411972046
+
+Epoch : 13 , train loss : 0.56089, validation loss : 0.48682, Time : 297.94179224967957
+
+Epoch : 13 , train loss : 0.56073, validation loss : 0.48456, Time : 297.89593052864075
+
+Epoch : 13 , train loss : 0.56071, validation loss : 0.48765, Time : 297.0123200416565
+
+Epoch : 13 , train loss : 0.56073, validation loss : 0.48426, Time : 300.0671615600586
+
+Epoch : 13 , train loss : 0.56074, validation loss : 0.48738, Time : 297.2448444366455
+
+Epoch : 13 , train loss : 0.56071, validation loss : 0.48637, Time : 298.38312792778015
+
+Epoch : 13 , train loss : 0.56072, validation loss : 0.48646, Time : 297.460266828537
+
+Epoch : 13 , train loss : 0.56075, validation loss : 0.48452, Time : 299.1337773799896
+
+Epoch : 13 , train loss : 0.56072, validation loss : 0.48663, Time : 298.1091115474701
+
+Epoch : 14 , train loss : 0.56071, validation loss : 0.48567, Time : 297.5969171524048
+
+Epoch : 14 , train loss : 0.56065, validation loss : 0.48683, Time : 302.25435423851013
+
+Epoch : 14 , train loss : 0.56065, validation loss : 0.48731, Time : 301.88248467445374
+
+Epoch : 14 , train loss : 0.56072, validation loss : 0.48652, Time : 297.5136184692383
+
+Epoch : 14 , train loss : 0.56069, validation loss : 0.48548, Time : 297.9047327041626
+
+Epoch : 14 , train loss : 0.56065, validation loss : 0.48484, Time : 297.85904693603516
+
+Epoch : 14 , train loss : 0.56065, validation loss : 0.48669, Time : 297.5372874736786
+
+Epoch : 14 , train loss : 0.56066, validation loss : 0.48551, Time : 298.3569087982178
+
+Epoch : 14 , train loss : 0.56066, validation loss : 0.48539, Time : 298.95723247528076
+
+Epoch : 15 , train loss : 0.56068, validation loss : 0.48625, Time : 299.2884349822998
+
+Epoch : 15 , train loss : 0.56057, validation loss : 0.48739, Time : 298.5195429325104
+
+Epoch : 15 , train loss : 0.56060, validation loss : 0.48652, Time : 299.0967662334442
+
+Epoch : 15 , train loss : 0.56055, validation loss : 0.48886, Time : 298.94002962112427
+
+Epoch : 15 , train loss : 0.56060, validation loss : 0.48587, Time : 298.7558798789978
+
+Epoch : 15 , train loss : 0.56064, validation loss : 0.48636, Time : 299.2793550491333
+
+Epoch : 15 , train loss : 0.56065, validation loss : 0.48613, Time : 300.5316803455353
+
+Epoch : 15 , train loss : 0.56063, validation loss : 0.48536, Time : 298.59318590164185
+
+Epoch : 15 , train loss : 0.56064, validation loss : 0.48606, Time : 300.12462854385376
+
+Epoch : 16 , train loss : 0.56060, validation loss : 0.48827, Time : 298.7544162273407
+
+Epoch : 16 , train loss : 0.56064, validation loss : 0.48765, Time : 300.51198959350586
+
+Epoch : 16 , train loss : 0.56059, validation loss : 0.48638, Time : 300.2083110809326
+
+Epoch : 16 , train loss : 0.56061, validation loss : 0.48729, Time : 297.9966287612915
+
+Epoch : 16 , train loss : 0.56065, validation loss : 0.48636, Time : 299.44965147972107
+
+Epoch : 16 , train loss : 0.56066, validation loss : 0.48769, Time : 300.2114372253418
+
+Epoch : 16 , train loss : 0.56067, validation loss : 0.48727, Time : 297.49934673309326
+
+Epoch : 16 , train loss : 0.56065, validation loss : 0.48528, Time : 296.23452830314636
+
+Epoch : 16 , train loss : 0.56063, validation loss : 0.48610, Time : 297.76301765441895
+
+Epoch : 17 , train loss : 0.56059, validation loss : 0.48645, Time : 296.70677495002747
+
+Epoch : 17 , train loss : 0.56059, validation loss : 0.48560, Time : 296.5850329399109
+
+Epoch : 17 , train loss : 0.56057, validation loss : 0.48562, Time : 296.2396545410156
+
+Epoch : 17 , train loss : 0.56060, validation loss : 0.48605, Time : 301.85740637779236
+
+Epoch : 17 , train loss : 0.56060, validation loss : 0.48675, Time : 295.5302097797394
+
+Epoch : 17 , train loss : 0.56060, validation loss : 0.48657, Time : 296.6241886615753
+
+Epoch : 17 , train loss : 0.56057, validation loss : 0.48810, Time : 296.4805085659027
+
+Epoch : 17 , train loss : 0.56057, validation loss : 0.48624, Time : 300.8052489757538
+
+Epoch : 17 , train loss : 0.56057, validation loss : 0.48525, Time : 296.5434904098511
+
+Epoch : 18 , train loss : 0.56065, validation loss : 0.48658, Time : 297.52344489097595
+
+Epoch : 18 , train loss : 0.56060, validation loss : 0.48517, Time : 297.9389612674713
+
+Epoch : 18 , train loss : 0.56056, validation loss : 0.48671, Time : 297.8690242767334
+
+Epoch : 18 , train loss : 0.56054, validation loss : 0.48592, Time : 295.72281670570374
+
+Epoch : 18 , train loss : 0.56048, validation loss : 0.48596, Time : 296.65214252471924
+
+Epoch : 18 , train loss : 0.56054, validation loss : 0.48638, Time : 297.2449281215668
+
+Epoch : 18 , train loss : 0.56053, validation loss : 0.48614, Time : 296.7822198867798
+
+Epoch : 18 , train loss : 0.56051, validation loss : 0.48673, Time : 295.3685553073883
+
+Epoch : 18 , train loss : 0.56051, validation loss : 0.48640, Time : 296.5544548034668
+
+Epoch : 19 , train loss : 0.56044, validation loss : 0.48661, Time : 297.42650055885315
+
+Epoch : 19 , train loss : 0.56034, validation loss : 0.48608, Time : 296.94886565208435
+
+Epoch : 19 , train loss : 0.56041, validation loss : 0.48678, Time : 296.0278489589691
+
+Epoch : 19 , train loss : 0.56049, validation loss : 0.48524, Time : 296.21963262557983
+
+Epoch : 19 , train loss : 0.56049, validation loss : 0.48569, Time : 300.50775623321533
+
+Epoch : 19 , train loss : 0.56047, validation loss : 0.48644, Time : 295.9075219631195
+
+Epoch : 19 , train loss : 0.56048, validation loss : 0.48708, Time : 296.00764298439026
+
+Epoch : 19 , train loss : 0.56050, validation loss : 0.48648, Time : 296.244998216629
+
+Epoch : 19 , train loss : 0.56049, validation loss : 0.48556, Time : 299.0684938430786
+
+Epoch : 20 , train loss : 0.56032, validation loss : 0.48625, Time : 294.7915925979614
+
+Epoch : 20 , train loss : 0.56042, validation loss : 0.48546, Time : 297.7633047103882
+
+Epoch : 20 , train loss : 0.56048, validation loss : 0.48656, Time : 296.94515013694763
+
+Epoch : 20 , train loss : 0.56050, validation loss : 0.48581, Time : 296.5125744342804
+
+Epoch : 20 , train loss : 0.56051, validation loss : 0.48605, Time : 297.13174629211426
+
+Epoch : 20 , train loss : 0.56048, validation loss : 0.48638, Time : 298.29610776901245
+
+Epoch : 20 , train loss : 0.56047, validation loss : 0.48639, Time : 295.5625476837158
+
+Epoch : 20 , train loss : 0.56046, validation loss : 0.48654, Time : 296.968834400177
+
+Epoch : 20 , train loss : 0.56048, validation loss : 0.48615, Time : 295.7241904735565
+
+Epoch : 21 , train loss : 0.56054, validation loss : 0.48639, Time : 297.10509610176086
+
+Epoch : 21 , train loss : 0.56058, validation loss : 0.48647, Time : 297.8921527862549
+
+Epoch : 21 , train loss : 0.56055, validation loss : 0.48595, Time : 297.17373180389404
+
+Epoch : 21 , train loss : 0.56052, validation loss : 0.48590, Time : 296.51828503608704
+
+Epoch : 21 , train loss : 0.56048, validation loss : 0.48599, Time : 298.52355551719666
+
+Epoch : 21 , train loss : 0.56045, validation loss : 0.48664, Time : 295.05070400238037
+
+Epoch : 21 , train loss : 0.56044, validation loss : 0.48569, Time : 295.8628091812134
+
+Epoch : 21 , train loss : 0.56043, validation loss : 0.48602, Time : 295.90474009513855
+
+Epoch : 21 , train loss : 0.56041, validation loss : 0.48643, Time : 295.02473998069763
+
+Epoch : 22 , train loss : 0.56017, validation loss : 0.48624, Time : 296.32508516311646
+
+Epoch : 22 , train loss : 0.56025, validation loss : 0.48603, Time : 294.7871403694153
+
+Epoch : 22 , train loss : 0.56031, validation loss : 0.48647, Time : 298.26149559020996
+
+Epoch : 22 , train loss : 0.56036, validation loss : 0.48648, Time : 297.93890857696533
+
+Epoch : 22 , train loss : 0.56039, validation loss : 0.48601, Time : 296.03975200653076
+
+Epoch : 22 , train loss : 0.56037, validation loss : 0.48598, Time : 296.2442436218262
+
+Epoch : 22 , train loss : 0.56038, validation loss : 0.48616, Time : 299.25776648521423
+
+Epoch : 22 , train loss : 0.56040, validation loss : 0.48593, Time : 297.31289052963257
+
+Epoch : 22 , train loss : 0.56041, validation loss : 0.48626, Time : 297.07046389579773
+
+Epoch : 23 , train loss : 0.56038, validation loss : 0.48658, Time : 297.0313413143158
+
+Epoch : 23 , train loss : 0.56041, validation loss : 0.48569, Time : 296.2354257106781
+
+Epoch : 23 , train loss : 0.56037, validation loss : 0.48598, Time : 294.88594245910645
+
+Epoch : 23 , train loss : 0.56039, validation loss : 0.48620, Time : 297.47523379325867
+
+Epoch : 23 , train loss : 0.56036, validation loss : 0.48630, Time : 297.90885496139526
+
+Epoch : 23 , train loss : 0.56035, validation loss : 0.48572, Time : 297.6758587360382
+
+Epoch : 23 , train loss : 0.56035, validation loss : 0.48612, Time : 296.8392548561096
+
+Epoch : 23 , train loss : 0.56038, validation loss : 0.48556, Time : 297.6952610015869
+
+Epoch : 23 , train loss : 0.56040, validation loss : 0.48615, Time : 296.73931312561035
+
+Epoch : 24 , train loss : 0.56053, validation loss : 0.48608, Time : 305.0399007797241
+
+Epoch : 24 , train loss : 0.56034, validation loss : 0.48599, Time : 296.34800720214844
+
+Epoch : 24 , train loss : 0.56036, validation loss : 0.48559, Time : 297.65278720855713
+
+Epoch : 24 , train loss : 0.56035, validation loss : 0.48596, Time : 297.78825879096985
+
+Epoch : 24 , train loss : 0.56037, validation loss : 0.48642, Time : 295.3594160079956
+
+Epoch : 24 , train loss : 0.56036, validation loss : 0.48561, Time : 298.69941306114197
+
+Epoch : 24 , train loss : 0.56030, validation loss : 0.48596, Time : 295.6309721469879
+
+Epoch : 24 , train loss : 0.56032, validation loss : 0.48588, Time : 297.853150844574
+
+Epoch : 24 , train loss : 0.56034, validation loss : 0.48621, Time : 296.4334304332733
+
+Epoch : 25 , train loss : 0.56037, validation loss : 0.48587, Time : 297.05817890167236
+
+Epoch : 25 , train loss : 0.56025, validation loss : 0.48613, Time : 294.9058599472046
+
+Epoch : 25 , train loss : 0.56036, validation loss : 0.48658, Time : 295.3576376438141
+
+Epoch : 25 , train loss : 0.56032, validation loss : 0.48576, Time : 296.2187361717224
+
+Epoch : 25 , train loss : 0.56033, validation loss : 0.48573, Time : 297.544949054718
+
+Epoch : 25 , train loss : 0.56032, validation loss : 0.48574, Time : 297.26423382759094
+
+Epoch : 25 , train loss : 0.56030, validation loss : 0.48595, Time : 295.69009947776794
+
+Epoch : 25 , train loss : 0.56034, validation loss : 0.48606, Time : 295.553129196167
+
+Epoch : 25 , train loss : 0.56033, validation loss : 0.48617, Time : 297.59470200538635
+
+Epoch : 26 , train loss : 0.56035, validation loss : 0.48599, Time : 295.8150553703308
+
+Epoch : 26 , train loss : 0.56021, validation loss : 0.48621, Time : 297.303768157959
+
+Epoch : 26 , train loss : 0.56033, validation loss : 0.48611, Time : 295.6920599937439
+
+Epoch : 26 , train loss : 0.56036, validation loss : 0.48593, Time : 297.6898021697998
+
+Epoch : 26 , train loss : 0.56035, validation loss : 0.48606, Time : 296.0341730117798
+
+Epoch : 26 , train loss : 0.56031, validation loss : 0.48598, Time : 297.3720717430115
+
+Epoch : 26 , train loss : 0.56028, validation loss : 0.48620, Time : 295.67893171310425
+
+Epoch : 26 , train loss : 0.56026, validation loss : 0.48608, Time : 294.57790207862854
+
+Epoch : 26 , train loss : 0.56029, validation loss : 0.48609, Time : 299.82896065711975
+
+Epoch : 27 , train loss : 0.56039, validation loss : 0.48564, Time : 295.0255105495453
+
+Epoch : 27 , train loss : 0.56031, validation loss : 0.48570, Time : 296.33465218544006
+
+Epoch : 27 , train loss : 0.56033, validation loss : 0.48561, Time : 295.21158933639526
+
+Epoch : 27 , train loss : 0.56029, validation loss : 0.48616, Time : 298.14376616477966
+
+Epoch : 27 , train loss : 0.56028, validation loss : 0.48596, Time : 296.49733710289
+
+Epoch : 27 , train loss : 0.56029, validation loss : 0.48613, Time : 296.75792694091797
+
+Epoch : 27 , train loss : 0.56029, validation loss : 0.48597, Time : 296.4395875930786
+
+Epoch : 27 , train loss : 0.56029, validation loss : 0.48599, Time : 296.1594469547272
+
+Epoch : 27 , train loss : 0.56028, validation loss : 0.48571, Time : 297.7681984901428
+
+Epoch : 28 , train loss : 0.56019, validation loss : 0.48559, Time : 296.27091121673584
+
+Epoch : 28 , train loss : 0.56023, validation loss : 0.48641, Time : 298.1552414894104
+
+Epoch : 28 , train loss : 0.56024, validation loss : 0.48615, Time : 294.4696135520935
+
+Epoch : 28 , train loss : 0.56026, validation loss : 0.48603, Time : 295.0293433666229
+
+Epoch : 28 , train loss : 0.56025, validation loss : 0.48607, Time : 294.73424458503723
+
+Epoch : 28 , train loss : 0.56024, validation loss : 0.48623, Time : 295.1343011856079
+
+Epoch : 28 , train loss : 0.56023, validation loss : 0.48629, Time : 297.422771692276
+
+Epoch : 28 , train loss : 0.56024, validation loss : 0.48574, Time : 301.45745491981506
+
+Epoch : 28 , train loss : 0.56027, validation loss : 0.48607, Time : 296.44016909599304
+
+Epoch : 29 , train loss : 0.56034, validation loss : 0.48650, Time : 297.08917784690857
+
+Epoch : 29 , train loss : 0.56032, validation loss : 0.48603, Time : 295.8131437301636
+
+Epoch : 29 , train loss : 0.56034, validation loss : 0.48540, Time : 296.9868869781494
+
+Epoch : 29 , train loss : 0.56034, validation loss : 0.48615, Time : 297.4745879173279
+
+Epoch : 29 , train loss : 0.56032, validation loss : 0.48595, Time : 297.175345659256
+
+Epoch : 29 , train loss : 0.56028, validation loss : 0.48540, Time : 297.67731857299805
+
+Epoch : 29 , train loss : 0.56027, validation loss : 0.48566, Time : 297.03529691696167
+
+Epoch : 29 , train loss : 0.56024, validation loss : 0.48623, Time : 296.8951053619385
+
+Epoch : 29 , train loss : 0.56026, validation loss : 0.48579, Time : 298.64906573295593
+
+Epoch : 30 , train loss : 0.56015, validation loss : 0.48561, Time : 297.6833472251892
+
+Epoch : 30 , train loss : 0.56019, validation loss : 0.48602, Time : 297.30355191230774
+
+Epoch : 30 , train loss : 0.56022, validation loss : 0.48580, Time : 298.6118903160095
+
+Epoch : 30 , train loss : 0.56029, validation loss : 0.48581, Time : 296.63301515579224
+
+Epoch : 30 , train loss : 0.56026, validation loss : 0.48596, Time : 295.7350025177002
+
+Epoch : 30 , train loss : 0.56025, validation loss : 0.48596, Time : 302.7832577228546
+
+Epoch : 30 , train loss : 0.56024, validation loss : 0.48597, Time : 299.3778510093689
+
+Epoch : 30 , train loss : 0.56025, validation loss : 0.48571, Time : 298.1251902580261
+
+Epoch : 30 , train loss : 0.56023, validation loss : 0.48612, Time : 295.6813313961029
+
+Epoch : 31 , train loss : 0.56028, validation loss : 0.48552, Time : 296.4711456298828
+
+Epoch : 31 , train loss : 0.56021, validation loss : 0.48615, Time : 297.20105957984924
+
+Epoch : 31 , train loss : 0.56015, validation loss : 0.48626, Time : 296.7318832874298
+
+Epoch : 31 , train loss : 0.56027, validation loss : 0.48580, Time : 297.3786635398865
+
+Epoch : 31 , train loss : 0.56029, validation loss : 0.48574, Time : 296.79557061195374
+
+Epoch : 31 , train loss : 0.56027, validation loss : 0.48571, Time : 298.36313223838806
+
+Epoch : 31 , train loss : 0.56022, validation loss : 0.48607, Time : 296.5539195537567
+
+Epoch : 31 , train loss : 0.56023, validation loss : 0.48574, Time : 296.29414892196655
+
+Epoch : 31 , train loss : 0.56021, validation loss : 0.48582, Time : 296.0824818611145
+
+Epoch : 32 , train loss : 0.55999, validation loss : 0.48597, Time : 297.98454308509827
+
+Epoch : 32 , train loss : 0.56011, validation loss : 0.48574, Time : 296.26941537857056
+
+Epoch : 32 , train loss : 0.56019, validation loss : 0.48567, Time : 294.55344700813293
+
+Epoch : 32 , train loss : 0.56021, validation loss : 0.48580, Time : 296.76339864730835
+
+Epoch : 32 , train loss : 0.56019, validation loss : 0.48601, Time : 295.91203474998474
+
+Epoch : 32 , train loss : 0.56017, validation loss : 0.48591, Time : 299.7549076080322
+
+Epoch : 32 , train loss : 0.56017, validation loss : 0.48622, Time : 296.5439782142639
+
+Epoch : 32 , train loss : 0.56016, validation loss : 0.48567, Time : 297.9354758262634
+
+Epoch : 32 , train loss : 0.56016, validation loss : 0.48613, Time : 297.91704988479614
+
+Epoch : 33 , train loss : 0.56019, validation loss : 0.48578, Time : 296.75745010375977
+
+Epoch : 33 , train loss : 0.56016, validation loss : 0.48614, Time : 295.8654100894928
+
+Epoch : 33 , train loss : 0.56011, validation loss : 0.48604, Time : 301.5467917919159
+
+Epoch : 33 , train loss : 0.56009, validation loss : 0.48621, Time : 297.35131573677063
+
+Epoch : 33 , train loss : 0.56010, validation loss : 0.48570, Time : 295.1693847179413
+
+Epoch : 33 , train loss : 0.56013, validation loss : 0.48602, Time : 297.7829396724701
+
+Epoch : 33 , train loss : 0.56014, validation loss : 0.48589, Time : 296.09012508392334
+
+Epoch : 33 , train loss : 0.56016, validation loss : 0.48582, Time : 298.0469694137573
+
+Epoch : 33 , train loss : 0.56018, validation loss : 0.48571, Time : 299.4819281101227
+
+Epoch : 34 , train loss : 0.56003, validation loss : 0.48615, Time : 298.13314056396484
+
+Epoch : 34 , train loss : 0.56009, validation loss : 0.48588, Time : 298.6487798690796
+
+Epoch : 34 , train loss : 0.56008, validation loss : 0.48570, Time : 298.39795684814453
+
+Epoch : 34 , train loss : 0.56006, validation loss : 0.48578, Time : 296.9544277191162
+
+Epoch : 34 , train loss : 0.56012, validation loss : 0.48587, Time : 299.04051327705383
+
+Epoch : 34 , train loss : 0.56010, validation loss : 0.48592, Time : 296.7220833301544
+
+Epoch : 34 , train loss : 0.56013, validation loss : 0.48583, Time : 296.92821192741394
+
+Epoch : 34 , train loss : 0.56013, validation loss : 0.48592, Time : 297.3453619480133
+
+Epoch : 34 , train loss : 0.56014, validation loss : 0.48593, Time : 296.92066502571106
+
+Epoch : 35 , train loss : 0.56030, validation loss : 0.48593, Time : 297.2573354244232
+
+Epoch : 35 , train loss : 0.56018, validation loss : 0.48590, Time : 296.881432056427
+
+Epoch : 35 , train loss : 0.56010, validation loss : 0.48535, Time : 299.8430724143982
+
+Epoch : 35 , train loss : 0.56012, validation loss : 0.48540, Time : 295.6965653896332
+
+Epoch : 35 , train loss : 0.56012, validation loss : 0.48581, Time : 295.49175572395325
+
+Epoch : 35 , train loss : 0.56014, validation loss : 0.48577, Time : 295.66004967689514
+
+Epoch : 35 , train loss : 0.56012, validation loss : 0.48566, Time : 296.1534388065338
+
+Epoch : 35 , train loss : 0.56016, validation loss : 0.48568, Time : 296.41386580467224
+
+Epoch : 35 , train loss : 0.56014, validation loss : 0.48569, Time : 299.86064767837524
+
+Epoch : 36 , train loss : 0.56022, validation loss : 0.48606, Time : 296.95936393737793
+
+Epoch : 36 , train loss : 0.56011, validation loss : 0.48548, Time : 303.56327199935913
+
+Epoch : 36 , train loss : 0.56006, validation loss : 0.48600, Time : 296.89298486709595
+
+Epoch : 36 , train loss : 0.56013, validation loss : 0.48629, Time : 295.5496828556061
+
+Epoch : 36 , train loss : 0.56012, validation loss : 0.48599, Time : 298.0582346916199
+
+Epoch : 36 , train loss : 0.56009, validation loss : 0.48628, Time : 297.717698097229
+
+Epoch : 36 , train loss : 0.56010, validation loss : 0.48613, Time : 297.9526619911194
+
+Epoch : 36 , train loss : 0.56013, validation loss : 0.48606, Time : 296.3351683616638
+
+Epoch : 36 , train loss : 0.56011, validation loss : 0.48551, Time : 299.83685088157654
+
+Epoch : 37 , train loss : 0.56017, validation loss : 0.48566, Time : 294.9791250228882
+
+Epoch : 37 , train loss : 0.56005, validation loss : 0.48568, Time : 297.380007982254
+
+Epoch : 37 , train loss : 0.56000, validation loss : 0.48563, Time : 296.2718961238861
+
+Epoch : 37 , train loss : 0.56008, validation loss : 0.48581, Time : 296.6710367202759
+
+Epoch : 37 , train loss : 0.56008, validation loss : 0.48536, Time : 295.91268706321716
+
+Epoch : 37 , train loss : 0.56010, validation loss : 0.48575, Time : 298.00663709640503
+
+Epoch : 37 , train loss : 0.56009, validation loss : 0.48582, Time : 299.39395570755005
+
+Epoch : 37 , train loss : 0.56010, validation loss : 0.48570, Time : 296.3956227302551
+
+Epoch : 37 , train loss : 0.56010, validation loss : 0.48543, Time : 294.28452014923096
+
+Epoch : 38 , train loss : 0.56013, validation loss : 0.48594, Time : 301.9655451774597
+
+Epoch : 38 , train loss : 0.56005, validation loss : 0.48539, Time : 298.38196420669556
+
+Epoch : 38 , train loss : 0.56005, validation loss : 0.48592, Time : 296.9266405105591
+
+Epoch : 38 , train loss : 0.56006, validation loss : 0.48565, Time : 298.1447079181671
+
+Epoch : 38 , train loss : 0.56009, validation loss : 0.48557, Time : 295.6006803512573
+
+Epoch : 38 , train loss : 0.56006, validation loss : 0.48576, Time : 298.3093190193176
+
+Epoch : 38 , train loss : 0.56007, validation loss : 0.48536, Time : 297.1894094944
+
+Epoch : 38 , train loss : 0.56008, validation loss : 0.48535, Time : 296.155038356781
+
+Epoch : 38 , train loss : 0.56007, validation loss : 0.48618, Time : 295.6130554676056
+
+Epoch : 39 , train loss : 0.56036, validation loss : 0.48566, Time : 297.66954350471497
+
+Epoch : 39 , train loss : 0.56033, validation loss : 0.48540, Time : 297.93004417419434
+
+Epoch : 39 , train loss : 0.56019, validation loss : 0.48552, Time : 296.9126660823822
+
+Epoch : 39 , train loss : 0.56008, validation loss : 0.48572, Time : 295.92453503608704
+
+Epoch : 39 , train loss : 0.56007, validation loss : 0.48597, Time : 297.0228409767151
+
+Epoch : 39 , train loss : 0.56008, validation loss : 0.48592, Time : 296.48279762268066
+
+Epoch : 39 , train loss : 0.56009, validation loss : 0.48563, Time : 294.9022305011749
+
+Epoch : 39 , train loss : 0.56006, validation loss : 0.48576, Time : 294.6385922431946
+
+Epoch : 39 , train loss : 0.56008, validation loss : 0.48552, Time : 300.95927023887634
+
+Epoch : 40 , train loss : 0.56020, validation loss : 0.48541, Time : 297.8234543800354
+
+Epoch : 40 , train loss : 0.56016, validation loss : 0.48588, Time : 297.3431556224823
+
+Epoch : 40 , train loss : 0.56014, validation loss : 0.48620, Time : 296.2236111164093
+
+Epoch : 40 , train loss : 0.56007, validation loss : 0.48583, Time : 298.8481955528259
+
+Epoch : 40 , train loss : 0.56006, validation loss : 0.48548, Time : 297.74866127967834
+
+Epoch : 40 , train loss : 0.56004, validation loss : 0.48556, Time : 294.7318983078003
+
+Epoch : 40 , train loss : 0.56003, validation loss : 0.48555, Time : 298.38440227508545
+
+Epoch : 40 , train loss : 0.56003, validation loss : 0.48576, Time : 294.5605492591858
+
+Epoch : 40 , train loss : 0.56006, validation loss : 0.48568, Time : 295.0825114250183
+
+Epoch : 41 , train loss : 0.56002, validation loss : 0.48576, Time : 296.9434778690338
+
+Epoch : 41 , train loss : 0.56006, validation loss : 0.48599, Time : 296.07090044021606
+
+Epoch : 41 , train loss : 0.56003, validation loss : 0.48572, Time : 297.0735025405884
+
+Epoch : 41 , train loss : 0.56002, validation loss : 0.48569, Time : 295.9404978752136
+
+Epoch : 41 , train loss : 0.56003, validation loss : 0.48600, Time : 295.9429843425751
+
+Epoch : 41 , train loss : 0.56003, validation loss : 0.48545, Time : 295.8108811378479
+
+Epoch : 41 , train loss : 0.56003, validation loss : 0.48594, Time : 297.98781061172485
+
+Epoch : 41 , train loss : 0.56005, validation loss : 0.48585, Time : 297.11860251426697
+
+Epoch : 41 , train loss : 0.56003, validation loss : 0.48573, Time : 296.4190249443054
+
+Epoch : 42 , train loss : 0.56007, validation loss : 0.48567, Time : 295.57750415802
+
+Epoch : 42 , train loss : 0.56012, validation loss : 0.48557, Time : 297.2712023258209
+
+Epoch : 42 , train loss : 0.55999, validation loss : 0.48595, Time : 297.21390771865845
+
+Epoch : 42 , train loss : 0.55995, validation loss : 0.48570, Time : 296.99232602119446
+
+Epoch : 42 , train loss : 0.55994, validation loss : 0.48575, Time : 297.75367760658264
+
+Epoch : 42 , train loss : 0.55998, validation loss : 0.48549, Time : 294.1809575557709
+
+Epoch : 42 , train loss : 0.56002, validation loss : 0.48558, Time : 296.27405881881714
+
+Epoch : 42 , train loss : 0.56002, validation loss : 0.48563, Time : 298.24102687835693
+
+Epoch : 42 , train loss : 0.56001, validation loss : 0.48523, Time : 295.6168267726898
+
+Epoch : 43 , train loss : 0.55984, validation loss : 0.48545, Time : 295.5795409679413
+
+Epoch : 43 , train loss : 0.55984, validation loss : 0.48574, Time : 294.99485039711
+
+Epoch : 43 , train loss : 0.55990, validation loss : 0.48537, Time : 297.1240019798279
+
+Epoch : 43 , train loss : 0.55996, validation loss : 0.48525, Time : 296.6040585041046
+
+Epoch : 43 , train loss : 0.55996, validation loss : 0.48591, Time : 296.0030791759491
+
+Epoch : 43 , train loss : 0.55996, validation loss : 0.48597, Time : 295.5836012363434
+
+Epoch : 43 , train loss : 0.56000, validation loss : 0.48529, Time : 294.8624863624573
+
+Epoch : 43 , train loss : 0.56000, validation loss : 0.48614, Time : 298.31139874458313
+
+Epoch : 43 , train loss : 0.56002, validation loss : 0.48558, Time : 297.2408790588379
+
+Epoch : 44 , train loss : 0.55992, validation loss : 0.48569, Time : 295.7935929298401
+
+Epoch : 44 , train loss : 0.55993, validation loss : 0.48525, Time : 296.17438554763794
+
+Epoch : 44 , train loss : 0.55999, validation loss : 0.48534, Time : 298.14483308792114
+
+Epoch : 44 , train loss : 0.56002, validation loss : 0.48558, Time : 298.04205799102783
+
+Epoch : 44 , train loss : 0.56003, validation loss : 0.48570, Time : 299.90173387527466
+
+Epoch : 44 , train loss : 0.56001, validation loss : 0.48605, Time : 295.53304529190063
+
+Epoch : 44 , train loss : 0.56001, validation loss : 0.48551, Time : 297.3655924797058
+
+Epoch : 44 , train loss : 0.56002, validation loss : 0.48555, Time : 297.2750177383423
+
+Epoch : 44 , train loss : 0.56003, validation loss : 0.48544, Time : 298.72866702079773
+
+Epoch : 45 , train loss : 0.55998, validation loss : 0.48574, Time : 296.6156418323517
+
+Epoch : 45 , train loss : 0.56001, validation loss : 0.48561, Time : 294.87677669525146
+
+Epoch : 45 , train loss : 0.56003, validation loss : 0.48551, Time : 295.41969752311707
+
+Epoch : 45 , train loss : 0.56004, validation loss : 0.48575, Time : 298.79633593559265
+
+Epoch : 45 , train loss : 0.56005, validation loss : 0.48571, Time : 294.91462802886963
+
+Epoch : 45 , train loss : 0.56002, validation loss : 0.48557, Time : 296.2111339569092
+
+Epoch : 45 , train loss : 0.56005, validation loss : 0.48581, Time : 302.93527579307556
+
+Epoch : 45 , train loss : 0.56002, validation loss : 0.48550, Time : 297.31862139701843
+
+Epoch : 45 , train loss : 0.55999, validation loss : 0.48567, Time : 298.9452648162842
+
+Epoch : 46 , train loss : 0.56006, validation loss : 0.48570, Time : 296.7873616218567
+
+Epoch : 46 , train loss : 0.56007, validation loss : 0.48521, Time : 296.16626930236816
+
+Epoch : 46 , train loss : 0.56001, validation loss : 0.48596, Time : 296.05569291114807
+
+Epoch : 46 , train loss : 0.56006, validation loss : 0.48588, Time : 295.71139192581177
+
+Epoch : 46 , train loss : 0.56002, validation loss : 0.48571, Time : 296.0767195224762
+
+Epoch : 46 , train loss : 0.55998, validation loss : 0.48538, Time : 297.47882056236267
+
+Epoch : 46 , train loss : 0.56000, validation loss : 0.48575, Time : 296.2089309692383
+
+Epoch : 46 , train loss : 0.56000, validation loss : 0.48522, Time : 300.395206451416
+
+Epoch : 46 , train loss : 0.55999, validation loss : 0.48565, Time : 302.6974627971649
+
+Epoch : 47 , train loss : 0.55983, validation loss : 0.48580, Time : 296.875892162323
+
+Epoch : 47 , train loss : 0.56000, validation loss : 0.48564, Time : 300.17234444618225
+
+Epoch : 47 , train loss : 0.56004, validation loss : 0.48549, Time : 298.6297767162323
+
+Epoch : 47 , train loss : 0.56005, validation loss : 0.48541, Time : 298.263564825058
+
+Epoch : 47 , train loss : 0.55999, validation loss : 0.48573, Time : 297.20550560951233
+
+Epoch : 47 , train loss : 0.55999, validation loss : 0.48566, Time : 299.51398825645447
+
+Epoch : 47 , train loss : 0.55999, validation loss : 0.48530, Time : 296.9348134994507
+
+Epoch : 47 , train loss : 0.56000, validation loss : 0.48594, Time : 297.84365153312683
+
+Epoch : 47 , train loss : 0.55997, validation loss : 0.48544, Time : 298.1526710987091
+
+Epoch : 48 , train loss : 0.55992, validation loss : 0.48570, Time : 298.25081753730774
+
+Epoch : 48 , train loss : 0.55997, validation loss : 0.48594, Time : 296.66131067276
+
+Epoch : 48 , train loss : 0.56000, validation loss : 0.48567, Time : 296.60161113739014
+
+Epoch : 48 , train loss : 0.56000, validation loss : 0.48529, Time : 302.98727917671204
+
+Epoch : 48 , train loss : 0.55998, validation loss : 0.48562, Time : 297.9193515777588
+
+Epoch : 48 , train loss : 0.55997, validation loss : 0.48538, Time : 298.208824634552
+
+Epoch : 48 , train loss : 0.55995, validation loss : 0.48585, Time : 298.84118604660034
+
+Epoch : 48 , train loss : 0.55997, validation loss : 0.48553, Time : 300.0234088897705
+
+Epoch : 48 , train loss : 0.55995, validation loss : 0.48556, Time : 297.89553022384644
+
+Epoch : 49 , train loss : 0.55977, validation loss : 0.48546, Time : 296.56893968582153
+
+Epoch : 49 , train loss : 0.55982, validation loss : 0.48560, Time : 298.61552572250366
