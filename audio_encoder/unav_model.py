@@ -157,7 +157,6 @@ class Audio_Emb_Loss(nn.Module):
     
     def forward (self,x):
         x = self.model(x).float()
-        x = x/x.norm(dim=-1,keepdim=True)
         return x # (batch, 768)
     
     
@@ -174,8 +173,6 @@ class Mapping_Model(nn.Module):
         
         # 76//7x1024, 76x1024
         self.linear2 = torch.nn.Linear(1024,self.max_length*self.output_c)
-        # self.linear3 = torch.nn.Linear(self.max_length//7*self.output_c,self.max_length//7*self.output_c)
-        # self.linear4 = torch.nn.Linear(self.max_length//7*self.output_c,self.max_length*self.output_c)
         self.act = torch.nn.GELU()
         self.drop = torch.nn.Dropout(0.2)
         
@@ -201,16 +198,6 @@ class Mapping_Model(nn.Module):
         x = self.linear2(x)
         x = self.act(x)
         x = self.drop(x)
-
-        # # 3 번째 레이어의 출력
-        # x = self.linear3(x)
-        # x = self.act(x)
-        # x = self.drop(x)
-
-        # # 4 번째 레이어의 출력
-        # x = self.linear4(x)
-        # x = self.act(x)
-        # x = self.drop(x)
 
         # 최종 출력 형태 조정
         x = x.reshape(-1, self.max_length, 1024)
@@ -317,28 +304,23 @@ class SoundCLIPLoss(torch.nn.Module):
 
 # if __name__ == "__main__":
 
-    # # model = Audio_Emb_Loss()
+    model = Audio_Emb_Loss()
 
-    # # # 모델의 각 레이어의 weight를 출력하여 확인
-    # # for name, param in model.named_parameters():
-    # #     print(name, param)  
-
-
-    # # model = model.cuda()
-    # # model.eval()
+    # 모델의 각 레이어의 weight를 출력하여 확인
+    for name, param in model.named_parameters():
+        print(name, param)  
 
 
-    # map_model = Mapping_Model()
-    # # 모델의 각 레이어의 weight를 출력하여 확인
-    # map_model.load_state_dict(torch.load("../pretrained_models/unav_map_model2_0_audio_emb_loss.pth"))
-    # for name, param in map_model.named_parameters():
-    #     print(name, param)  
+    model = model.cuda()
+    model.eval()
 
-    # map_model2 = Mapping_Model()
-    # # 모델의 각 레이어의 weight를 출력하여 확인
-    # map_model2.load_state_dict(torch.load("../pretrained_models/unav_map_model2_40_audio_emb_loss.pth"))
-    # for name, param in map_model2.named_parameters():
-    #     print(name, param)  
+    print(model)
+
+    map_model = Mapping_Model()
+    # 모델의 각 레이어의 weight를 출력하여 확인
+    for name, param in map_model.named_parameters():
+        print(name, param)  
+    print(map_model)
 
     
     
